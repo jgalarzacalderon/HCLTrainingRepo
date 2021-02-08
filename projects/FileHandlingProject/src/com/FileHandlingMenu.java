@@ -66,7 +66,7 @@ public class FileHandlingMenu {
 		} while (userCom.equals("quit") == false);
 		
 		System.out.println(System.lineSeparator() + "Program closing");
-	
+		usrIn.close();
 	}
 
 	/*
