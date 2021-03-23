@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+.container {
+  background: #f2f2f2; 
+  margin-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.header h1 {
+  overflow: hidden;
+  background-color: rgb(26, 227, 207);
+  display:flex;
+  justify-content:center;
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  position: relative;
+  top: -21px;
+}
+.main-message{
+  text-align: center;
+  position: relative;
+  top:-16px;
+}
+.botnav {
+  overflow: hidden;
+  background-color: rgb(26, 227, 207);
+  display:flex;
+  justify-content:center;
+}
+.botnav a {
+  float: left;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.botnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 10px;
+}
+caption {
+  font-size: 20px; 
+  font-weight: bold;
+}
+table.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+div.form {
+	display: block;
+	text-align:center;
+}
+form {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+.form input {
+	width: 100%;
+	clear: both;
+	text-align: center;
+}
+.form input[type='submit']{
+  	display:flex;
+  	justify-content:center;
+}
+input.center {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
