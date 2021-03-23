@@ -15,17 +15,20 @@
 </head>
 
 <body>
-
-<div class="header">
-	<h1>Phase 3 Project 3</h1>
-</div>
-
-<div class="main-message">
+<div class="container">
+	<div class="header">
+		<h1>Phase 3 Project 3</h1>
+	</div>
 	
-	<h2>Login successful, welcome!</h2>
-	<p>To logout please click the link below</p>
+	<div class="main-message">
+		
+		<h2>Login successful, welcome!</h2>
+		<p>To logout please click the link below</p>
+	</div>
+	
+	<div class="botnav">
+		<a href="login">Logout</a>
+	</div>
 </div>
-
-<div class="botnav">
-	<a href="login">Logout</a>
-</div>
+</body>
+</html>
