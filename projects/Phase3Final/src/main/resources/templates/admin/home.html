@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Page</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<form th:action="@{/logout}" method="GET">
+			<br><button class="btn btn-md btn-danger btn-block" name="registration"
+					type="Submit">Logout</button>
+		</form>
+	
+		<div class="panel-group" style="margin-top:40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span th:utext="${userName}"></span>
+				</div>
+				<div class="panel-body">
+					<img th:src="@{/images/logo.jpg}" class="img-responsive center-block" width="420" height="420" alt="logo"/>
+				</div>
+				<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+			</div>
+		</div>
+		
+		<div class="panel-group" style="margin-top:40px">
+			<div class="panel panel-primary">
+				<p>Welcome to your administrator page. Here you'll be able to view your tasks by clicking the "Go to Task Update Page"
+				   link below. It will display you an up-to-date list of all your Tasks as well as allow you to update or delete any
+				   existing task if you would like. You may also click the "Go to Task Creation Page" link to go to the web form to 
+				   create new Tasks and save them to the database. 
+			</div>
+		</div>
+		
+		<form th:action="@{/taskpage}" method="get">
+			<button class="btn btn-primary btn-block" type="Submit">Go to Task Creation Page</button>
+		</form>
+		<form th:action="@{/updatetask}" method="get">
+			<button class="btn btn-primary btn-block" type="Submit">Go to Task Management Page</button></br></br>
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Task Page</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/taskform.css}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+	<div class="container">
+	
+
+	
+	<br><form th:action="@{/logout}" method="GET">
+		<button class="btn btn-md btn-danger btn-block" name="registration" type="Submit">Logout</button>
+	</form>
+	
+	<div class="panel-group" style="margin-top: 40px">
+		<div class="panel panel-primary">
+			<p>Use the form below to create a new Tasks for yourself. Enter a name, start date, end date, severity level
+			   and a brief descrption of the task you wish to create. Then click the "Create Task" link at the bottom of
+			   the form. When done feel free to click "Logout" above or use any of the other navigation links at the bottom
+			   of the page to travel to another of the Task manager's views.</p>
+		</div>
+	</div>
+
+			<form autocomplete="off" action="#" th:action="@{/taskpage}"
+				  th:object="${task}" method="post" class="form-horizontal"
+				  role="form">
+				<h2>Task Creation Form</h2>	  
+				<h2><span class="text-success" th:utext="${successMessage}"></span></h2>
+				
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                               class="validation-message">Task Name</label>
+                        <input type="text" th:field="*{name}" placeholder="Task Name"
+                               class="form-control" th:required="required"/>
+                    </div>
+                </div>	
+				
+				<div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"
+                               class="validation-message">Start Date</label>
+                        <input type="date" th:field="*{startDate}" placeholder="MM/DD/YYYY"
+                               class="form-control" th:required="required"/>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"
+                               class="validation-message">End Date</label>
+                        <input type="date" th:field="*{endDate}" placeholder="MM/DD/YYYY"
+                               class="form-control" th:required="required"/>
+                    </div>
+                </div>
+				
+				<div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('severity')}" th:errors="*{severity}"
+                               class="validation-message">Severity</label>
+                        <select th:field="*{severity}" placeholder="Choose a severity"
+                               class="form-control">
+                        	<option value="high">High</option>
+                        	<option value="medium">Medium</option>
+                        	<option value="low">Low</option>       
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+                               class="validation-message">Description</label>
+                        <textarea th:field="*{description}" placeholder="Please enter a description of the task"
+                               class="form-control" rows=10 cols=30 th:required="required"></textarea>
+                    </div>
+                </div>
+				
+				<div>
+					<div class="class-sm-9">
+						<button type="Submit" class="btn btn-primary btn-block">Create Task</button><br>
+					</div>
+				</div>
+				
+			</form>
+			
+
+		<form th:action="@{/admin/home}" method="get">
+			<button class="btn btn-md btn-primary btn-block" type="Submit">Go to Task Admin Home Page</button>
+		</form>
+		<form th:action="@{/updatetask}" method="get">
+			<button class="btn btn-md btn-primary btn-block" type="Submit">Go to Task Management Page</button><br><br>
+		</form>
+	</div>
+
+</body>
+</html>
